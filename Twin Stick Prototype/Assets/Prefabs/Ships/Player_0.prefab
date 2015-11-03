@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e53f2ca9a0ac23408a86aeacf28ce5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: .699999988
+  turnSpeed: .700999975
   speed: 100
   shots:
   - {fileID: 11422614}
@@ -653,6 +653,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Constraints
       value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: turnSpeed
+      value: .700999975
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
