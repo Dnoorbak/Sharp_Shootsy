@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EnemyA : BaseEnemy {
-
+    public float speed = 0.1f;
 	// Use this for initialization
 	void Start () {
 	
@@ -11,6 +11,6 @@ public class EnemyA : BaseEnemy {
 	// Update is called once per frame
  	public	override void  Update () {
 		this.transform.position = Vector3.MoveTowards (this.transform.position,
-		                                              this.player.transform.position, 0.1f);
+		                                              this.player.transform.position, speed);
 	}
 }

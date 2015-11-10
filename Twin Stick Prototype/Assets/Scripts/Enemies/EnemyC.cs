@@ -3,9 +3,12 @@ using System.Collections;
 
 public class EnemyC : BaseEnemy {
 	public float rotationSpeed = 36000f;
-	public enum State {FINDING, CHARGING, RECOVERING};
+    public float chargeSpeed = 1.0f;
+    public float chargeDistance = 2.4f;
+    public enum State {FINDING, CHARGING, RECOVERING};
 	public State state=State.FINDING;
 	public Vector3 chargeEndingPosition;
+    public float recoveryTime = 1;
 	float timeToRecover = 1;
 	// Use this for initialization
 	void Start () {
@@ -30,14 +33,17 @@ public class EnemyC : BaseEnemy {
 			if(Mathf.Abs(Quaternion.Angle(transform.rotation , newRotation))<10)
 			{
 				Ray chargeRay = new Ray(this.transform.position, (player.transform.position-this.transform.position).normalized);
-				this.chargeEndingPosition =	chargeRay.GetPoint(Vector3.Distance(player.transform.position, this.transform.position)* 2.4f);
+				this.chargeEndingPosition =	chargeRay.GetPoint(Vector3.Distance(player.transform.position, this.transform.position)* chargeDistance);
 				state = State.CHARGING;
 
 			}
 		} else if (state == State.CHARGING) {
-					this.transform.position = Vector3.MoveTowards(this.transform.position, chargeEndingPosition, 1f);
-					if(Vector3.Distance(this.transform.position, chargeEndingPosition)<1)
-				state = State.RECOVERING;
+					this.transform.position = Vector3.MoveTowards(this.transform.position, chargeEndingPosition, chargeSpeed);
+            if (Vector3.Distance(this.transform.position, chargeEndingPosition) < 1)
+            {
+                timeToRecover = recoveryTime;
+                state = State.RECOVERING;
+            }
 
 		}
 				else  if (state == State.RECOVERING)

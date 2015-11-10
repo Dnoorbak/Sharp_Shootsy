@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 424964}
   - 33: {fileID: 3315590}
-  - 65: {fileID: 6597434}
   - 23: {fileID: 2316190}
   m_Layer: 0
   m_Name: Cube
@@ -27,9 +26,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 424472}
   - 114: {fileID: 11438166}
+  - 65: {fileID: 6517748}
   m_Layer: 0
   m_Name: EnemyC
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,12 +90,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132220}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6597434
+--- !u!65 &6517748
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132220}
+  m_GameObject: {fileID: 172794}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -114,16 +114,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  rotationSpeed: 55.6300011
+  explosion: {fileID: 118382, guid: 19741954b9fc253458dc27e37e24baf1, type: 2}
+  rotationSpeed: 100
+  chargeSpeed: 1
+  chargeDistance: 1
   state: 0
   chargeEndingPosition: {x: 0, y: 0, z: 0}
+  recoveryTime: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: rotationSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: chargeSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: chargeDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a9c17177235316448aaa57b548537a9b, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 118382, guid: 19741954b9fc253458dc27e37e24baf1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172794}

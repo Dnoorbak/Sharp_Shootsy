@@ -21,12 +21,9 @@ public class Shot : MonoBehaviour
     }
     void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag != "Player")
+        if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Player Shot")
             this.Death();
-		if (collision.gameObject.tag == "Enemy") {
-			Destroy(collision.gameObject);
-
-		}
+		
     }
 
 

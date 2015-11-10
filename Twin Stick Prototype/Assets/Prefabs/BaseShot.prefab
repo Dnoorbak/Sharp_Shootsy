@@ -18,7 +18,7 @@ GameObject:
   - 82: {fileID: 8246024}
   m_Layer: 0
   m_Name: BaseShot
-  m_TagString: Player
+  m_TagString: New Tag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,9 +93,10 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: c3de89f1a7f544c44a93d96a5a22296d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .184
-  m_Pitch: .75999999
+  m_Pitch: 1.5
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -347,7 +348,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
-      value: Player
+      value: New Tag
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
@@ -372,6 +373,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Volume
       value: .184
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Pitch
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

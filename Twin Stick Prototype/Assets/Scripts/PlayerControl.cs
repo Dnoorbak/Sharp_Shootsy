@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
 	public Text livesText;
 	public float invCountdown = 0f;
 	public int lives = 0;
+    public GameObject explosion;
 
     void Start()
     {
@@ -25,6 +26,9 @@ public class PlayerControl : MonoBehaviour
 		if(collision.gameObject.tag == "Enemy" && invCountdown <=0){
 			lives --;
 			invCountdown = 2;
+            GetComponent<AudioSource>().Play();
+            if (lives < 0)
+                Death();
 		}
 	}
 
@@ -60,5 +64,11 @@ public class PlayerControl : MonoBehaviour
         //transform.up = direction;
         rotation = Vector3.Lerp(transform.up, direction, turnSpeed);
         transform.up = rotation;
+    }
+
+    void Death()
+    {
+        Instantiate(explosion, transform.position, transform.rotation);
+        GameObject.DestroyObject(this.gameObject);
     }
 }
