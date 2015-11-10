@@ -9,7 +9,7 @@ public class EnemyB : BaseEnemy {
 	}
 	
 	// Update is called once per frame
-	public	override void  Update() {
+	public	override void FixedUpdate() {
 	
 	}
 }

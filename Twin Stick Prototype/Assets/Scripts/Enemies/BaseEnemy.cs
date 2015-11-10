@@ -15,10 +15,13 @@ public class BaseEnemy : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	public virtual void Update () {
-		//Simplest movement, intended to be overidden
-		this.transform.position = Vector3.MoveTowards (this.transform.position,
-		                                               this.player.transform.position, 0.1f*Time.deltaTime);
+	public virtual void FixedUpdate () {
+        if (player != null)
+        {
+            //Simplest movement, intended to be overidden
+            this.transform.position = Vector3.MoveTowards(this.transform.position,
+                                                           this.player.transform.position, 0.1f * Time.deltaTime);
+        }
 	}
 
     void OnTriggerEnter(Collider collision)
