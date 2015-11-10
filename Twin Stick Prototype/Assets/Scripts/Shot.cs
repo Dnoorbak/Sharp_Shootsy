@@ -23,6 +23,10 @@ public class Shot : MonoBehaviour
     {
         if(collision.gameObject.tag != "Player")
             this.Death();
+		if (collision.gameObject.tag == "Enemy") {
+			Destroy(collision.gameObject);
+
+		}
     }
 
 
