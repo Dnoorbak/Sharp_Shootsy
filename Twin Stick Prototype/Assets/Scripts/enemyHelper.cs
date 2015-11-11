@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class enemyHelper : MonoBehaviour {
-
+    public int rate = 1;
+    public int level = 0;
 	public GameObject[] prefabs; 
 	// Use this for initialization
 
@@ -22,7 +23,17 @@ public class enemyHelper : MonoBehaviour {
 
     void Spawn()
     {
-        Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(Random.Range(-50, 50), Random.Range(-50, 50), 0), transform.rotation);
-        //tempObject.GetComponent<BaseEnemy>().gameObject.transform.position = new Vector3(Random.Range(-50, 50), Random.Range(-50, 50), 0);
+        for (int i = 0; i < rate; i++)
+        {
+            Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(Random.Range(-50, 50), Random.Range(-50, 50), 0), transform.rotation);
+            //tempObject.GetComponent<BaseEnemy>().gameObject.transform.position = new Vector3(Random.Range(-50, 50), Random.Range(-50, 50), 0);
+        }
+        level++;
+
+        if (level % 30 == 0)
+        {
+            rate++;
+            print("rate: " + rate);
+        }
     }
 }

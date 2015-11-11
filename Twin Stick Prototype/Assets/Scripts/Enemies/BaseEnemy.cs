@@ -35,7 +35,9 @@ public class BaseEnemy : MonoBehaviour {
 
     void Death()
     {
-        player.GetComponent<PlayerControl>().score += value;
+        if (player != null)
+            player.GetComponent<PlayerControl>().score += value;
+
         Instantiate(explosion, transform.position, transform.rotation);
         GameObject.DestroyObject(this.gameObject);
     }
