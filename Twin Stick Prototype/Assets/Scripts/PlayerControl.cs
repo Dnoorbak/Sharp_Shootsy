@@ -10,16 +10,20 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody rb;
     public Launcher[] shots;
 	public Text livesText;
-	public float invCountdown = 0f;
-	public int lives = 0;
+    public Text scoreText;
+    public float invCountdown = 0f;
+	public int lives = 3;
+    public int score = 0;
     public GameObject explosion;
+    public GameObject damage;
     private bool alive;
 
     void Start()
     {
 		rb = GetComponent<Rigidbody> ();
 		FollowCam.S.poi = this.gameObject;
-		livesText.text = lives+"";
+		livesText.text = lives + "";
+        //scoreText.text = score + "";
         alive = true;
 
     }
@@ -29,9 +33,10 @@ public class PlayerControl : MonoBehaviour
             if (collision.gameObject.tag == "Enemy" && invCountdown <= 0)
             {
                 lives--;
+                livesText.text = lives + "";
                 invCountdown = 2;
-                GetComponent<AudioSource>().Play();
-                if (lives < 0)
+                Instantiate(damage, transform.position, transform.rotation);
+                if (lives <= 0)
                     Death();
             }
         }
@@ -39,8 +44,9 @@ public class PlayerControl : MonoBehaviour
 
 	void Update()
 	{
-		livesText.text =  lives+"";
-		if (invCountdown > 0) {
+		//livesText.text = lives + "";
+        scoreText.text = score + "";
+        if (invCountdown > 0) {
 			invCountdown -= Time.deltaTime;
 		}
 	}

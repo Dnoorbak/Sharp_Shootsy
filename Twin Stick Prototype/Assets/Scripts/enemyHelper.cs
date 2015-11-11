@@ -22,7 +22,7 @@ public class enemyHelper : MonoBehaviour {
 
     void Spawn()
     {
-        Instantiate(prefabs[Random.Range(0, 4)], new Vector3(Random.Range(-50, 50), Random.Range(-50, 50), 0), transform.rotation);
+        Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(Random.Range(-50, 50), Random.Range(-50, 50), 0), transform.rotation);
         //tempObject.GetComponent<BaseEnemy>().gameObject.transform.position = new Vector3(Random.Range(-50, 50), Random.Range(-50, 50), 0);
     }
 }

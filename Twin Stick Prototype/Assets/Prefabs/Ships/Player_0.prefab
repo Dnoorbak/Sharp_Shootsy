@@ -606,6 +606,13 @@ MonoBehaviour:
   - {fileID: 11422614}
   - {fileID: 11488608}
   - {fileID: 11409844}
+  livesText: {fileID: 0}
+  scoreText: {fileID: 0}
+  invCountdown: 1
+  lives: 3
+  score: 0
+  explosion: {fileID: 196036, guid: 5d2171badc14f9d43a620e7c257063b0, type: 2}
+  damage: {fileID: 153644, guid: a165dd8f43a3d2a4dacd02077d551033, type: 2}
 --- !u!114 &11488608
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -80,13 +80,14 @@ GameObject:
   - 54: {fileID: 5400340}
   - 114: {fileID: 11431932}
   - 135: {fileID: 13563066}
+  - 82: {fileID: 8246608}
   m_Layer: 0
   m_Name: Player_1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &152062
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +495,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148196}
   serializedVersion: 2
-  m_Mass: .300000012
+  m_Mass: .400000006
   m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -502,6 +503,76 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!82 &8246608
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148196}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2b6d8a78967c85b4298f188587761199, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!96 &9604676
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -641,6 +712,13 @@ MonoBehaviour:
   - {fileID: 11469152}
   - {fileID: 11437098}
   - {fileID: 11474792}
+  livesText: {fileID: 0}
+  scoreText: {fileID: 0}
+  invCountdown: 0
+  lives: 3
+  score: 0
+  explosion: {fileID: 196036, guid: 5d2171badc14f9d43a620e7c257063b0, type: 2}
+  damage: {fileID: 153644, guid: a165dd8f43a3d2a4dacd02077d551033, type: 2}
 --- !u!114 &11437098
 MonoBehaviour:
   m_ObjectHideFlags: 1

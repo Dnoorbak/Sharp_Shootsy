@@ -4,6 +4,7 @@ using System.Collections;
 public class BaseEnemy : MonoBehaviour {
 	public GameObject player;
     public GameObject explosion;
+    public int value = 100;
     // Use this for initialization
     void Awake()
 	{
@@ -34,6 +35,7 @@ public class BaseEnemy : MonoBehaviour {
 
     void Death()
     {
+        player.GetComponent<PlayerControl>().score += value;
         Instantiate(explosion, transform.position, transform.rotation);
         GameObject.DestroyObject(this.gameObject);
     }
