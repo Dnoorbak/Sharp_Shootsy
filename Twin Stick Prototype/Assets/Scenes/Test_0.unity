@@ -2024,7 +2024,7 @@ MonoBehaviour:
   - Spawn10EnemyD
   - Spawn5EnemyE
   - Spawn5EnemyC
-  - Spawn5EnemyD
+  - Spawn10EnemyB
   - Spawn10Random
   - Spawn10Random
   - UpLevel

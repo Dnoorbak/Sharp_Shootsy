@@ -39,7 +39,7 @@ public class enemyHelper : MonoBehaviour {
 
 					currentString = currentString.Replace ("Random", "");
 					int count = int.Parse (currentString);
-					Spawn (1, 0, EnemyTypeList.Length);
+					Spawn (count, 0, EnemyTypeList.Length);
 					//int count =  int.Parse( eventList[current]);
 				}
 	
