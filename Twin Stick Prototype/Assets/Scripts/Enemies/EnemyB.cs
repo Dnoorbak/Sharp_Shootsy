@@ -89,7 +89,7 @@ public class EnemyB : BaseEnemy
 		avoidSpot = tempSpot + this.transform.position;
 		while (
 
-			!( Rect.MinMaxRect(-50, -50, 100,100).Contains(avoidSpot)) //inside
+			!( Rect.MinMaxRect(-50, -50, 50,50).Contains(avoidSpot)) //inside
 			||
 
 			(Vector3.Distance(avoidSpot, player.transform.position)<avoidyDestinationRequiredDistanceFromPlayer)

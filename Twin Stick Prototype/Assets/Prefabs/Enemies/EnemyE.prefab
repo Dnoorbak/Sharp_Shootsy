@@ -368,6 +368,8 @@ MonoBehaviour:
   _____________________: 0
   stateOffset1: 0
   stateOffset2: 0
+  sign: 0
+  sign2: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
