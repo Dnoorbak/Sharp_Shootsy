@@ -4,6 +4,9 @@ using System.Collections;
 public class FollowCam : MonoBehaviour
 {
     static public FollowCam S; //follow cam singleton
+    public float timeMag = 0.5f;
+    public float factor = 3;
+    public float push = 4;
     //feilds set in inspector
     public float easing = 0.05f;
     //public Vector2 minXY;
@@ -44,5 +47,13 @@ public class FollowCam : MonoBehaviour
         transform.position = destination;
         //set the orthographic state of the camera to keep the ground in view
        // this.GetComponent<Camera>().orthographicSize = destination.y + 10;
+    }
+
+    void Update()
+    {
+
+        //Time.timeScale =(  Mathf.Cos(Time.time* timeMag) *factor)+push;
+        Time.timeScale = timeMag;
+        print(Time.timeScale);
     }
 }

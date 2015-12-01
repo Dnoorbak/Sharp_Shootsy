@@ -25,6 +25,7 @@ public class PlayerControl : MonoBehaviour
 		livesText.text = lives + "";
         //scoreText.text = score + "";
         alive = true;
+        speed = (1 / FollowCam.S.timeMag) *100;
 
     }
     void OnTriggerEnter(Collider collision)
@@ -32,6 +33,8 @@ public class PlayerControl : MonoBehaviour
         if (alive) {
             if (collision.gameObject.tag == "Enemy" && invCountdown <= 0)
             {
+                FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>().enabled = true;
+                //FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.ColorCorrectionCurves>().enabled = true;
                 lives--;
                 livesText.text = lives + "";
                 invCountdown = 2;
@@ -46,10 +49,17 @@ public class PlayerControl : MonoBehaviour
 	{
 		//livesText.text = lives + "";
         scoreText.text = score + "";
-        if (invCountdown > 0) {
-			invCountdown -= Time.deltaTime;
-		}
-	}
+        if (invCountdown > 0)
+        {
+            invCountdown -= Time.deltaTime;
+
+        }
+        else
+        {
+            FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>().enabled = false;
+            //FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.ColorCorrectionCurves>().enabled = false;
+        }
+    }
 
     void FixedUpdate()
     {
