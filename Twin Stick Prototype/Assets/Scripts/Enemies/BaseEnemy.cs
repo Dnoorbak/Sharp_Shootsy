@@ -5,6 +5,7 @@ public class BaseEnemy : MonoBehaviour {
 	public GameObject player;
     public GameObject explosion;
     public int value = 100;
+	public int level = 1;
     // Use this for initialization
     void Awake()
 	{
@@ -14,7 +15,11 @@ public class BaseEnemy : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+	public void UpLevel(int l)
+	{
+		this.level += 1;
+
+	}
 	// Update is called once per frame
 	public virtual void FixedUpdate () {
         if (player != null)
