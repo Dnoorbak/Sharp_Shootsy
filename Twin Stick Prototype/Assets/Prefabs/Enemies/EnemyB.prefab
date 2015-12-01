@@ -133,7 +133,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 84ef2246c5d90ca47af3e9771aff4e36, type: 2}
+  - {fileID: 2100000, guid: 3f5d20f84cd2f064aaae3cf4436aea9e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -181,7 +181,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 84ef2246c5d90ca47af3e9771aff4e36, type: 2}
+  - {fileID: 2100000, guid: 3f5d20f84cd2f064aaae3cf4436aea9e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -376,15 +376,16 @@ MonoBehaviour:
   player: {fileID: 0}
   explosion: {fileID: 152916, guid: 87d6a76ef2d92834088ebf9e8abd27e5, type: 2}
   value: 100
+  level: 1
   AvoidRange: 20
-  spotAngle: 100
-  speed: 2.05999994
+  spotAngle: 30
+  speed: 15
   DistanceToStopAvoiding: 2
-  AvoidySpotRange: 10
+  AvoidySpotRange: 5
   avoidyDestinationRequiredDistanceFromPlayer: 10
-  avoidySpeedMuliplyer: 40
-  SuisideDistance: 5.17000008
-  SuisideSpeedMultiplyer: 3
+  avoidySpeedMuliplyer: 600
+  SuisideDistance: 5
+  SuisideSpeedMultiplyer: 10
   currentState: 1
   ______________________________: 0
   avoidSpot: {x: 0, y: 0, z: 0}

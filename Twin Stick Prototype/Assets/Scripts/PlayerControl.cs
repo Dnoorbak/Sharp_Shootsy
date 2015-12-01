@@ -25,7 +25,7 @@ public class PlayerControl : MonoBehaviour
 		livesText.text = lives + "";
         //scoreText.text = score + "";
         alive = true;
-        speed = (1 / FollowCam.S.timeMag) *100;
+        //speed = (1 / FollowCam.S.timeMag) *100;
 
     }
     void OnTriggerEnter(Collider collision)

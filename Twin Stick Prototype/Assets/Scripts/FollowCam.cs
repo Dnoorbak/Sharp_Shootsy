@@ -54,6 +54,6 @@ public class FollowCam : MonoBehaviour
 
         //Time.timeScale =(  Mathf.Cos(Time.time* timeMag) *factor)+push;
         Time.timeScale = timeMag;
-        print(Time.timeScale);
+        //print(Time.timeScale);
     }
 }

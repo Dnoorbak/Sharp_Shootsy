@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.4200001, y: 0, z: 0}
+  m_LocalPosition: {x: 31.2600002, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453284}
@@ -156,7 +156,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 84ef2246c5d90ca47af3e9771aff4e36, type: 2}
+  - {fileID: 2100000, guid: c4babc1d1414aaa4682a7825afafbea9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -180,7 +180,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 84ef2246c5d90ca47af3e9771aff4e36, type: 2}
+  - {fileID: 2100000, guid: c4babc1d1414aaa4682a7825afafbea9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -363,6 +363,7 @@ MonoBehaviour:
   player: {fileID: 0}
   explosion: {fileID: 152916, guid: 87d6a76ef2d92834088ebf9e8abd27e5, type: 2}
   value: 100
+  level: 1
   speed: .300000012
 --- !u!1001 &100100000
 Prefab:

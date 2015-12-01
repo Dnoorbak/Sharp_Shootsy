@@ -107,17 +107,17 @@ public class enemyHelper : MonoBehaviour {
         for (int i = 0; i < rate; i++)
         {
 			Vector3 newSpot;
-			do {
 
-				newSpot = new Vector3(Random.Range(-MapDistance, MapDistance), Random.Range(-MapDistance, MapDistance), 0);
-				                      } while (
-					(Vector3.Distance(newSpot, player.transform.position)<distanceAwayFromPlayer)
-					&&
-					//(Rect.MinMaxRect(-MapDistance, -MapDistance, MapDistance,MapDistance).Contains(newSpot))
-					true
+            newSpot = new Vector3(Random.Range(-MapDistance, MapDistance), Random.Range(-MapDistance, MapDistance), 0);
 
-					);
-				                      GameObject temp = (GameObject)Instantiate(prefabs[Random.Range(startType, endtype+1)], newSpot, transform.rotation);
+            while ( (Vector3.Distance(newSpot, FollowCam.S.poi.transform.position) < distanceAwayFromPlayer))
+            {
+                newSpot = new Vector3(Random.Range(-MapDistance, MapDistance), Random.Range(-MapDistance, MapDistance), 0);
+            }
+
+
+
+            GameObject temp = (GameObject)Instantiate(prefabs[Random.Range(startType, endtype+1)], newSpot, transform.rotation);
 			temp.GetComponent<BaseEnemy>().UpLevel(Level);
 			temp.transform.parent = this.gameObject.transform;
 			//tempObject.GetComponent<BaseEnemy>().gameObject.transform.position = new Vector3(Random.Range(-50, 50), Random.Range(-50, 50), 0);
