@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
+using Random = UnityEngine.Random;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+
 public class enemyHelper : MonoBehaviour {
    // public int rate = 1;
    // public int level = 0;
@@ -115,9 +118,19 @@ public class enemyHelper : MonoBehaviour {
                 newSpot = new Vector3(Random.Range(-MapDistance, MapDistance), Random.Range(-MapDistance, MapDistance), 0);
             }
 
+            GameObject temp = null;
+            try
+            {
+                temp = (GameObject) Instantiate(prefabs[Random.Range(startType, endtype + 1)], newSpot, transform.rotation);
+            }
+            catch (Exception e)
+            {
+                Debug.LogErrorFormat("Error calling Spawn with these values startType: {0}, endType: {1} + 1, newSpot: {2}, rotation: {3}",
+                    startType, endtype + 1, newSpot, transform.rotation.ToString());
+                Debug.LogError("Error caught: " + e);
+            }
 
-
-            GameObject temp = (GameObject)Instantiate(prefabs[Random.Range(startType, endtype+1)], newSpot, transform.rotation);
+            //GameObject temp = (GameObject)Instantiate(prefabs[Random.Range(startType, endtype+1)], newSpot, transform.rotation);
 			temp.GetComponent<BaseEnemy>().UpLevel(Level);
 			temp.transform.parent = this.gameObject.transform;
 			//tempObject.GetComponent<BaseEnemy>().gameObject.transform.position = new Vector3(Random.Range(-50, 50), Random.Range(-50, 50), 0);
