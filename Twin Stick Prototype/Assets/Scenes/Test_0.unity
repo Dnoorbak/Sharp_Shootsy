@@ -2081,7 +2081,7 @@ MonoBehaviour:
   - EnemyD
   - EnemyE
   eventList:
-  - Spawn100EnemyA
+  - Spawn100EnemyARing
   - Spawn100EnemyD
   - Spawn10Random
   - Spawn15EnemyC
@@ -2098,6 +2098,33 @@ MonoBehaviour:
   Level: 1
   current: 0
   doneWithLast: 1
+  _______________RingStuff: 0
+  ringSpeed: 0
+  ringDelay: 0
+  ringRadiusbyPie: 40
+  _______________SquareStuff: 0
+  SquareDelay: .400000006
+  SquareMag: 4
+  Square_Rows: 20
+  Squareoffset: {x: 0, y: 0, z: 0}
+  _______________StarStuff: 0
+  StarDelay: 0
+  StarMag: 3
+  StarboundsWidth: 50
+  StarboundsHeight: 50
+  StarboundsX: 0
+  StarboundsY: 0
+  Star_XPart: 0
+  Star_YPart: 0
+  Star_num_points: 5
+  _______________QQQStuff: 0
+  QQQSpeed: .100000001
+  QQQDelay: .400000006
+  QQQRadiusbyPie: 40
+  _______________ZZZStuff: 0
+  ZZZSpeed: .100000001
+  ZZZDelay: .400000006
+  ZZZRadiusbyPie: 40
 --- !u!1 &874421329
 GameObject:
   m_ObjectHideFlags: 0
