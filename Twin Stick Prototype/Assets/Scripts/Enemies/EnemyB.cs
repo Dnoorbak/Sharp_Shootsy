@@ -18,7 +18,7 @@ public class EnemyB : BaseEnemy
 	public float avoidyDestinationRequiredDistanceFromPlayer = 10f;
 	public float avoidySpeedMuliplyer = 1000f;
 	public float SuisideDistance = 3f;
-	public float SuisideSpeedMultiplyer = 3f;
+	public float SuicideSpeedMultiplyer = 3f;
 	//public float escapeRange = 20;//should be proportional to escape range
 		public State currentState = State.Attacking;
 	public bool ______________________________;
@@ -45,7 +45,7 @@ public class EnemyB : BaseEnemy
 		             
 				if (distance< SuisideDistance) {
 					this.transform.position = Vector3.MoveTowards (transform.position,
-				                                              this.player.transform.position, speed * Time.deltaTime * SuisideSpeedMultiplyer);
+				                                              this.player.transform.position, speed * Time.deltaTime * SuicideSpeedMultiplyer);
 					//print ("Suicide");
 					return;
 

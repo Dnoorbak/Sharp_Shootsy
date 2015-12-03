@@ -13,21 +13,26 @@ public class PlayerControl : MonoBehaviour
 	public Text livesText;
     public Text scoreText;
     public float invCountdown = 0f;
+    float vibrationTimer;
 	public int lives = 3;
     public int score = 0;
     public GameObject explosion;
     public GameObject damage;
     private bool alive;
+    bool powerupReady;
 
     //Controller variables
     bool playerIndexSet = false;
     PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
-    float angle = 0.0f; //current angle ship is facing
-    float previousAngle = 0.0f; //previous angle ship was facing
-    public float leftVibration = 0.0f;
-    public float rightVibration = 0.0f;
+    float angle; //current angle ship is facing
+    float previousAngle; //previous angle ship was facing
+    float leftVibration = 0.0f;
+    float rightVibration = 0.0f;
+    public int powerupGauge;
+    int powerupThreshold = 2000;
+    public int PowerupThreshold { get { return powerupThreshold; } } //score needed to use powerup
 
     void Start()
     {
@@ -38,6 +43,10 @@ public class PlayerControl : MonoBehaviour
         alive = true;
         //speed = (1 / FollowCam.S.timeMag) *100;
 
+        previousAngle = angle = 90.0f;
+        vibrationTimer = 0f;
+        powerupGauge = 0;
+        powerupReady = false;
     }
 
     void OnTriggerEnter(Collider collision)
@@ -61,6 +70,11 @@ public class PlayerControl : MonoBehaviour
 
 	void Update()
 	{
+        if (!powerupReady)
+        {
+            powerupReady = IsPowerupReady();
+        }
+        
 		//livesText.text = lives + "";
         scoreText.text = score + "";
         if (invCountdown > 0)
@@ -72,9 +86,16 @@ public class PlayerControl : MonoBehaviour
             FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>().enabled = false;
 
             //turn vibration of controller off
-            HitVibration(false);
+            //HitVibration(false);
 
             //FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.ColorCorrectionCurves>().enabled = false;
+        }
+
+        if (vibrationTimer > 0) {
+            UpdateVibrationTimer();
+        }
+        else {
+            HitVibration(false);
         }
 
         CheckControllerConnections();
@@ -88,6 +109,11 @@ public class PlayerControl : MonoBehaviour
                 PlayerMove();
                 PlayerRotate();
                 Fire();
+                
+                if (state.Triggers.Right > 0.7)
+                {
+                    UsePowerup();
+                }
             }
         }
         else { //non-xbox controls (ie, no vibration of controller)
@@ -186,6 +212,9 @@ public class PlayerControl : MonoBehaviour
             // Set vibration
             leftVibration = rightVibration = 100.0f;
             GamePad.SetVibration(playerIndex, leftVibration, rightVibration);
+
+            // Reset timer for when to stop vibration
+            vibrationTimer = 0.5f;
         }
         else
         {
@@ -193,6 +222,11 @@ public class PlayerControl : MonoBehaviour
             leftVibration = rightVibration = 0.0f;
             GamePad.SetVibration(playerIndex, leftVibration, rightVibration);
         }
+    }
+
+    void UpdateVibrationTimer()
+    {
+        vibrationTimer -= Time.deltaTime;
     }
 
     void Fire()
@@ -203,5 +237,23 @@ public class PlayerControl : MonoBehaviour
         {
             s.Shoot();
         }
+    }
+
+    bool IsPowerupReady()
+    {
+        if (powerupGauge < powerupThreshold)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    void UsePowerup ()
+    {
+        powerupGauge = 0;
+        powerupReady = false;
     }
 }
