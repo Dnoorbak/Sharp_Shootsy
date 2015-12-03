@@ -2110,7 +2110,7 @@ MonoBehaviour:
   _______________StarStuff: 0
   StarDelay: 0
   StarMag: 3
-  StarboundsWidth: 50
+  StarboundsWidth: 51
   StarboundsHeight: 50
   StarboundsX: 0
   StarboundsY: 0
