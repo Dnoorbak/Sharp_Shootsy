@@ -364,7 +364,7 @@ MonoBehaviour:
   explosion: {fileID: 152916, guid: 87d6a76ef2d92834088ebf9e8abd27e5, type: 2}
   value: 100
   level: 1
-  speed: .300000012
+  speed: .100000001
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

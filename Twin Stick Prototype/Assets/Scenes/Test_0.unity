@@ -65,7 +65,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -85,6 +84,9 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!127 &5
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!1 &50584510
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,12 +134,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 1, b: .751724243, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2bfc349b556708e4c9cf18ce8bdc9102, type: 3}
     m_FontSize: 24
@@ -307,7 +303,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -359,7 +354,6 @@ AudioSource:
   m_Pitch: 1.10000002
   Loop: 1
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -2081,9 +2075,9 @@ MonoBehaviour:
   - EnemyD
   - EnemyE
   eventList:
-  - Spawn100EnemyB
-  - Spawn100EnemyD
-  - Spawn10Random
+  - Spawn100EnemyAStar
+  - Spawn100EnemyASquare
+  - Spawn100EnemyAStar
   - Spawn15EnemyC
   - Spawn20EnemyB
   - Spawn100EnemyE
@@ -2098,6 +2092,33 @@ MonoBehaviour:
   Level: 1
   current: 0
   doneWithLast: 1
+  _______________RingStuff: 0
+  ringSpeed: .0799999982
+  ringDelay: .00999999978
+  ringRadiusbyPie: 40
+  _______________SquareStuff: 0
+  SquareDelay: 0
+  SquareMag: 4
+  Square_Rows: 20
+  Squareoffset: {x: -32.5299988, y: 25, z: 0}
+  _______________StarStuff: 0
+  StarDelay: 0
+  StarMag: 3
+  StarboundsWidth: 50
+  StarboundsHeight: 50
+  StarboundsX: 0
+  StarboundsY: 0
+  Star_XPart: 0
+  Star_YPart: 0
+  Star_num_points: 10
+  _______________QQQStuff: 0
+  QQQSpeed: .100000001
+  QQQDelay: .400000006
+  QQQRadiusbyPie: 40
+  _______________ZZZStuff: 0
+  ZZZSpeed: .100000001
+  ZZZDelay: .400000006
+  ZZZRadiusbyPie: 40
 --- !u!1 &874421329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,7 +2179,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ForceModuleActive: 0
+  m_AllowActivationOnStandalone: 0
 --- !u!114 &903595616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2176,7 +2197,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_ForceModuleActive: 0
+  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &903595617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2233,12 +2254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 1, b: .751724243, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2bfc349b556708e4c9cf18ce8bdc9102, type: 3}
     m_FontSize: 24
@@ -3168,12 +3183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 1, b: .751724243, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2bfc349b556708e4c9cf18ce8bdc9102, type: 3}
     m_FontSize: 24
@@ -3386,12 +3395,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 1, b: .751724243, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2bfc349b556708e4c9cf18ce8bdc9102, type: 3}
     m_FontSize: 24
@@ -3538,7 +3541,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 468272, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11462710, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
       propertyPath: livesText
