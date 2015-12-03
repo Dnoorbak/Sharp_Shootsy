@@ -2081,7 +2081,7 @@ MonoBehaviour:
   - EnemyD
   - EnemyE
   eventList:
-  - Spawn100EnemyB
+  - Spawn100EnemyA
   - Spawn100EnemyD
   - Spawn10Random
   - Spawn15EnemyC
@@ -3580,6 +3580,58 @@ Prefab:
       propertyPath: damage
       value: 
       objectReference: {fileID: 153644, guid: a165dd8f43a3d2a4dacd02077d551033, type: 2}
+    - target: {fileID: 9681704, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[0].rgba
+      value: 2194341632
+      objectReference: {fileID: 0}
+    - target: {fileID: 9681704, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[1].rgba
+      value: 1272971008
+      objectReference: {fileID: 0}
+    - target: {fileID: 9681704, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[2].rgba
+      value: 352315904
+      objectReference: {fileID: 0}
+    - target: {fileID: 9681704, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[3].rgba
+      value: 352313088
+      objectReference: {fileID: 0}
+    - target: {fileID: 9681704, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[4].rgba
+      value: 16760832
+      objectReference: {fileID: 0}
+    - target: {fileID: 9636486, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[0].rgba
+      value: 12648192
+      objectReference: {fileID: 0}
+    - target: {fileID: 9636486, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[1].rgba
+      value: 181075712
+      objectReference: {fileID: 0}
+    - target: {fileID: 9636486, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[2].rgba
+      value: 350224128
+      objectReference: {fileID: 0}
+    - target: {fileID: 9636486, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[3].rgba
+      value: 348847872
+      objectReference: {fileID: 0}
+    - target: {fileID: 9636486, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Colors.m_Color[4].rgba
+      value: 15400704
+      objectReference: {fileID: 0}
+    - target: {fileID: 10832130, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 10832130, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10832130, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
+      propertyPath: m_Color.b
+      value: .875862122
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
   m_IsPrefabParent: 0
@@ -4338,7 +4390,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 445640, guid: 3b41e63ff54cd334aa0f5c11abc41cdf, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 20.5599995
+      value: 23.1660004
       objectReference: {fileID: 0}
     - target: {fileID: 445640, guid: 3b41e63ff54cd334aa0f5c11abc41cdf, type: 2}
       propertyPath: m_LocalPosition.y

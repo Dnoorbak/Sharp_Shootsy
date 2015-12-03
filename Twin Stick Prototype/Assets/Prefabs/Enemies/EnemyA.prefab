@@ -200,7 +200,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121324}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300002, guid: 103612e5e1ff43a4e896c567a2cb3ae1, type: 3}
 --- !u!33 &3308558
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -362,7 +362,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   explosion: {fileID: 152916, guid: 87d6a76ef2d92834088ebf9e8abd27e5, type: 2}
-  value: 100
   level: 1
   speed: .300000012
 --- !u!1001 &100100000
