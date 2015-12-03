@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Destroy : MonoBehaviour {
     public float delay = 0;
-    public float scale = 1;
-    public float mag = 1;
     // Use this for initialization
     void Awake () {
         GameObject.Destroy(this.gameObject, delay);

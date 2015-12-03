@@ -125,7 +125,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .388000011
+        second: .195999995
       data:
         first:
           name: _BumpScale
@@ -149,7 +149,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 1
+        second: .280999988
     m_Colors:
       data:
         first:
@@ -162,7 +162,7 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .117647052, g: .117647052, b: .117647052, a: 1}
+        second: {r: .352941155, g: 0, b: 0, a: 1}
       data:
         first:
           name: _SkyTint

@@ -108,7 +108,7 @@ public class PlayerControl : MonoBehaviour
             {
                 PlayerMove();
                 PlayerRotate();
-                Fire();
+                //Fire();
                 
                 if (state.Triggers.Right > 0.7)
                 {
@@ -199,6 +199,7 @@ public class PlayerControl : MonoBehaviour
             //set our previous angle and then update our current angle
             previousAngle = angle;
             angle = Mathf.Atan2(state.ThumbSticks.Right.Y, state.ThumbSticks.Right.X) * Mathf.Rad2Deg;
+            Fire();
         }
 
         //update the rotation of the player
