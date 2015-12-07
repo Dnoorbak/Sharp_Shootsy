@@ -4,6 +4,7 @@ using System.Collections;
 public class Launcher : MonoBehaviour
 {
     public GameObject bullet;
+    public float inaccuracy = 0f;
     public float cooldownTimer;
     //public float offset;
     private bool canShoot = true;
@@ -24,8 +25,11 @@ public class Launcher : MonoBehaviour
     {
         if (canShoot)
         {
-            //Quaternion rotation = 
-            GameObject.Instantiate(bullet, transform.position, transform.rotation);
+            Vector3 direction = transform.up + Random.insideUnitSphere * inaccuracy;
+            //direction.z = 90;
+            //transform.rotation = Quaternion.LookRotation(transform.forward, direction);
+
+            GameObject.Instantiate(bullet, transform.position, Quaternion.LookRotation(transform.forward, direction));
             //audio.Play();
             canShoot = false;
             Invoke("shotCooldown", cooldownTimer);
