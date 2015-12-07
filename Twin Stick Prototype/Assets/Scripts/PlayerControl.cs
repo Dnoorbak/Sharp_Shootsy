@@ -9,8 +9,12 @@ public class PlayerControl : MonoBehaviour
     public float speed = 1f;
     private Vector3 direction = new Vector3(0, 0, 0);
     private Rigidbody rb;
-    public Launcher[] shots;
-	public Text livesText;
+    private Launcher[] shots;
+    public Image weaponGauge;
+    public Image weaponIcon;
+    private float weaponCountdown;
+    private float weaponMax;
+    public Text livesText;
     public Text scoreText;
     public float invCountdown = 0f;
     float vibrationTimer;
@@ -18,6 +22,7 @@ public class PlayerControl : MonoBehaviour
     public int score = 0;
     public GameObject explosion;
     public GameObject damage;
+    public GameObject shipGraphic;
     private bool alive;
     bool powerupReady;
 
@@ -36,12 +41,13 @@ public class PlayerControl : MonoBehaviour
 
     void Start()
     {
-		rb = GetComponent<Rigidbody> ();
+        shots = GameObject.Find("Player_MainGun").GetComponentsInChildren<Launcher>();
+        rb = GetComponent<Rigidbody> ();
 		FollowCam.S.poi = this.gameObject;
 		livesText.text = lives + "";
         //scoreText.text = score + "";
         alive = true;
-        //speed = (1 / FollowCam.S.timeMag) *100;
+        speed = (1 / FollowCam.S.timeMag) *100;
 
         previousAngle = angle = 90.0f;
         vibrationTimer = 0f;
@@ -49,14 +55,43 @@ public class PlayerControl : MonoBehaviour
         powerupReady = false;
     }
 
+    void ResetWeapon ()
+    {
+        shots = GameObject.Find("Player_MainGun").GetComponentsInChildren<Launcher>();
+    }
+
     void OnTriggerEnter(Collider collision)
     {
         if (alive) {
-            if (collision.gameObject.tag == "Enemy" && invCountdown <= 0)
+            if (collision.gameObject.tag == "Powerup")
+            {
+                if (collision.gameObject.name == "Powerup_SpreadShot")
+                {
+                    shots = GameObject.Find("Player_SpreadGun").GetComponentsInChildren<Launcher>();
+                    weaponMax = 30;
+                    weaponCountdown = 30;
+                    weaponIcon.enabled = false;
+                    weaponIcon = GameObject.Find("WeaponIcon_Spread").GetComponent<Image>();
+                    weaponIcon.enabled = true;
+                }
+
+                if (collision.gameObject.name == "Powerup_RapidShot")
+                {
+                    shots = GameObject.Find("Player_RapidGun").GetComponentsInChildren<Launcher>();
+                    weaponMax = 30;
+                    weaponCountdown = 30;
+                    weaponIcon.enabled = false;
+                    weaponIcon = GameObject.Find("WeaponIcon_Rapid").GetComponent<Image>();
+                    weaponIcon.enabled = true;
+                }
+
+            }
+
+                if (collision.gameObject.tag == "Enemy" && invCountdown <= 0)
             {
                 HitVibration(true);
 
-                FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>().enabled = true;
+                //FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>().enabled = true;
                 //FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.ColorCorrectionCurves>().enabled = true;
                 lives--;
                 livesText.text = lives + "";
@@ -74,16 +109,31 @@ public class PlayerControl : MonoBehaviour
         {
             powerupReady = IsPowerupReady();
         }
+
+        if (weaponCountdown >= 0)
+        {
+            weaponCountdown -= Time.deltaTime;
+            weaponGauge.fillAmount = 1 * (weaponCountdown / weaponMax);
+            if (weaponCountdown <= 0)
+            {
+                weaponIcon.enabled = false;
+                weaponIcon = GameObject.Find("WeaponIcon").GetComponent<Image>();
+                weaponIcon.enabled = true;
+                ResetWeapon();
+                print("weapon off");
+            }
+        }
         
 		//livesText.text = lives + "";
         scoreText.text = score + "";
         if (invCountdown > 0)
         {
             invCountdown -= Time.deltaTime;
+            
         }
         else
         {
-            FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>().enabled = false;
+            //FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>().enabled = false;
 
             //turn vibration of controller off
             //HitVibration(false);

@@ -1,21 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Shot : MonoBehaviour
-{
+public class MineShot : MonoBehaviour {
+    public int fragCount = 5;
+    public GameObject fragment;
+
     public float speed;
     public float accelFactor;
     public float lifetime;
     public int dmg;
-    //public float inaccuracy = 0f;
     // Use this for initialization
     void Start()
     {
         //GameObject.DestroyObject(this.gameObject, lifetime);
-        //Vector3 direction = transform.up + Random.insideUnitSphere * inaccuracy;
-        //Vector3 direction = transform.rotation.eulerAngles;
-        //direction.z = 90;
-        //transform.rotation = Quaternion.LookRotation(transform.forward, direction);
         Invoke("Death", lifetime);
     }
 
@@ -27,9 +24,9 @@ public class Shot : MonoBehaviour
     }
     void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Player Shot" && collision.gameObject.tag != "Powerup")
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Player Shot")
             this.Death();
-		
+
     }
 
 
@@ -38,8 +35,14 @@ public class Shot : MonoBehaviour
         GameObject.DestroyObject(this.gameObject);
     }
 
-    //what happens when the shot hits something
-    void Death() {
+    void Death()
+    {
+        for (int i = 0; i < fragCount; i++)
+        {
+            //Quaternion fragRotation = Quaternion.AngleAxis( i * (360 / fragCount), Vector3.up);
+            Quaternion fragRotation = Quaternion.AngleAxis(0, Random.insideUnitSphere);
+            Instantiate(fragment, this.transform.position, fragRotation);
+        }
         GameObject.DestroyObject(this.gameObject);
     }
 }
