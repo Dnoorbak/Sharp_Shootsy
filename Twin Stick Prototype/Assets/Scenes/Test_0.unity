@@ -1194,10 +1194,6 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 424472, guid: ff8ac934ffd928c4a89e1970ef3cec4a, type: 2}
   m_PrefabInternal: {fileID: 688024971}
---- !u!1 &377869184 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 180338, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
-  m_PrefabInternal: {fileID: 1824142009}
 --- !u!1 &384813076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2235,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1811107652}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -6017,18 +6013,14 @@ Prefab:
       propertyPath: timeIcon
       value: 
       objectReference: {fileID: 1728646609}
-      propertyPath: shipGraphic
-      value: 
-      objectReference: {fileID: 377869184}
     - target: {fileID: 11462710, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
       propertyPath: deathText
       value: 
       objectReference: {fileID: 811270209}
     - target: {fileID: 11462710, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
       propertyPath: lives
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
->>>>>>> origin/master
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
   m_IsPrefabParent: 0
