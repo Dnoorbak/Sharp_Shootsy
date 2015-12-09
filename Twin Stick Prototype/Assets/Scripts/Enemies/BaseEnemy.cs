@@ -33,15 +33,36 @@ public abstract class BaseEnemy : MonoBehaviour {
         }
     }
 
+    void UpdateScore ()
+    {
+        var playerScript = player.GetComponent<PlayerControl>();
+        playerScript.score += value;
+    }
+
+    void UpdateHighScore ()
+    {
+        var playerScript = player.GetComponent<PlayerControl>();
+        if (playerScript.score > HighScoreKeeper.highScore)
+        {
+            HighScoreKeeper.highScore = playerScript.score;
+        }
+    }
+
+    void UpdatePowerupGauge ()
+    {
+        var playerScript = player.GetComponent<PlayerControl>();
+
+        if (playerScript.powerupGauge < playerScript.PowerupThreshold)
+            playerScript.powerupGauge += value;
+    }
+
     void Death()
     {
         if (player != null)
         {
-            var playerScript = player.GetComponent<PlayerControl>();
-            playerScript.score += value;
-
-            if (playerScript.powerupGauge < playerScript.PowerupThreshold)
-                playerScript.powerupGauge += value;
+            UpdateScore();
+            UpdateHighScore();
+            UpdatePowerupGauge();            
         }
 
         Instantiate(explosion, transform.position, transform.rotation);

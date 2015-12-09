@@ -4,7 +4,7 @@ using System.Collections;
 public class FollowCam : MonoBehaviour
 {
     static public FollowCam S; //follow cam singleton
-    public float timeMag = 0.5f;
+    public float timeMag = 1.5f;
     public float factor = 3;
     public float push = 4;
     //feilds set in inspector
@@ -53,7 +53,7 @@ public class FollowCam : MonoBehaviour
     {
 
         //Time.timeScale =(  Mathf.Cos(Time.time* timeMag) *factor)+push;
-        Time.timeScale = timeMag;
+        Time.timeScale = timeMag; //I control time of game
         //print(Time.timeScale);
     }
 }

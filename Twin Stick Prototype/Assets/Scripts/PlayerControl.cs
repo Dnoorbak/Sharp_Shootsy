@@ -47,7 +47,7 @@ public class PlayerControl : MonoBehaviour
 		livesText.text = lives + "";
         //scoreText.text = score + "";
         alive = true;
-        speed = (1 / FollowCam.S.timeMag) *100;
+        speed = (1 / FollowCam.S.timeMag) *100; //mess with this!
 
         previousAngle = angle = 90.0f;
         vibrationTimer = 0f;
@@ -158,7 +158,6 @@ public class PlayerControl : MonoBehaviour
             {
                 PlayerMove();
                 PlayerRotate();
-                //Fire();
                 
                 if (state.Triggers.Right > 0.7)
                 {
@@ -238,22 +237,35 @@ public class PlayerControl : MonoBehaviour
     void PlayerRotate()
     {
         // Set a deadzone for the right stick
-        if ((state.ThumbSticks.Right.X > -0.2 && state.ThumbSticks.Right.X < 0.2) &&
-            (state.ThumbSticks.Right.Y > -0.2 && state.ThumbSticks.Right.Y < 0.2))
+        if (!RightStickActivated())
         {
             //if the stick wasn't moved enough, the current angle is whatever the angle was previously
-            angle = previousAngle; 
+            angle = previousAngle;
         }
         else
         {
             //set our previous angle and then update our current angle
             previousAngle = angle;
             angle = Mathf.Atan2(state.ThumbSticks.Right.Y, state.ThumbSticks.Right.X) * Mathf.Rad2Deg;
+
             Fire();
         }
 
         //update the rotation of the player
         transform.rotation = Quaternion.AngleAxis(90.0f - angle, Vector3.back);
+    }
+
+    bool RightStickActivated ()
+    {
+        if ((state.ThumbSticks.Right.X > -0.2 && state.ThumbSticks.Right.X < 0.2) &&
+           (state.ThumbSticks.Right.Y > -0.2 && state.ThumbSticks.Right.Y < 0.2))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     void HitVibration(bool shouldVibrate)
