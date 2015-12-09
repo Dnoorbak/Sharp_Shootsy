@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d9fd9e4d7f5fe429af5a97ad6d2717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Powerup_SpreadShot
   lifetime: 30
   effect: {fileID: 156866, guid: e92f43d62689c644bb2789269514a555, type: 2}
 --- !u!212 &21252240
@@ -159,7 +160,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: a20d26512678618448166f02258377d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a20d26512678618448166f02258377d6, type: 3}
   m_Color: {r: 0, g: .5448277, b: 1, a: 1}
 --- !u!212 &21270582
 SpriteRenderer:
@@ -198,6 +199,15 @@ Prefab:
       propertyPath: effect
       value: 
       objectReference: {fileID: 156866, guid: e92f43d62689c644bb2789269514a555, type: 2}
+    - target: {fileID: 0}
+      propertyPath: type
+      value: Powerup_SpreadShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a20d26512678618448166f02258377d6,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 189428}

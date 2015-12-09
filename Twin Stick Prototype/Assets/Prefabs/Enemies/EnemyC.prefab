@@ -764,6 +764,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   explosion: {fileID: 124612, guid: 5059d845c1a62bc47912b6d23fa98a3e, type: 2}
+  powerups:
+  - {fileID: 168932, guid: 098edfd9c1438cb45805b81c1ed60329, type: 2}
+  dropChance: .0199999996
   value: 100
   level: 1
   rotationSpeed: 100
@@ -779,6 +782,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: powerups.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rotationSpeed
       value: 100
@@ -815,6 +822,10 @@ Prefab:
       propertyPath: m_Intensity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: powerups.Array.data[0]
+      value: 
+      objectReference: {fileID: 168932, guid: 098edfd9c1438cb45805b81c1ed60329, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172794}

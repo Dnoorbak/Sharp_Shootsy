@@ -569,6 +569,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   explosion: {fileID: 124612, guid: 965d38d6472663342a313bc6c7f4f596, type: 2}
+  powerups:
+  - {fileID: 189428, guid: 1372924dd70e97a43b647f1a2495b631, type: 2}
+  dropChance: .0199999996
   value: 100
   level: 1
   AvoidRange: 20
@@ -591,6 +594,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: powerups.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a9c17177235316448aaa57b548537a9b, type: 3}
@@ -606,6 +613,14 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: powerups.Array.data[0]
+      value: 
+      objectReference: {fileID: 189428, guid: 1372924dd70e97a43b647f1a2495b631, type: 2}
+    - target: {fileID: 0}
+      propertyPath: powerups.Array.data[1]
+      value: 
+      objectReference: {fileID: 189428, guid: 1372924dd70e97a43b647f1a2495b631, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 177548}
