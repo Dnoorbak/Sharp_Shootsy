@@ -52,7 +52,7 @@ public abstract class BaseEnemy : MonoBehaviour {
     {
         var playerScript = player.GetComponent<PlayerControl>();
 
-        if (playerScript.powerupGauge < playerScript.PowerupThreshold)
+        if (playerScript.powerupGauge < playerScript.PowerupThreshold && !playerScript.timePowerTriggered)
             playerScript.powerupGauge += value;
     }
 

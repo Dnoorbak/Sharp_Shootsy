@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     public float turnSpeed = 0.05f;
     public float speed = 1f;
+    public float speedIncrease = 100f;
     private Vector3 direction = new Vector3(0, 0, 0);
     private Rigidbody rb;
     private Launcher[] shots;
@@ -14,6 +15,12 @@ public class PlayerControl : MonoBehaviour
     public Image weaponIcon;
     private float weaponCountdown;
     private float weaponMax;
+
+    public Image timeGauge;
+    public Image timeIcon;
+    private float timeCountdown;
+    private float timeMax; //this might be my 10k limit
+
     public Text livesText;
     public Text scoreText;
     public float invCountdown = 0f;
@@ -35,8 +42,9 @@ public class PlayerControl : MonoBehaviour
     float previousAngle; //previous angle ship was facing
     float leftVibration = 0.0f;
     float rightVibration = 0.0f;
-    public int powerupGauge;
-    int powerupThreshold = 2000;
+    public bool timePowerTriggered;
+    public float powerupGauge;
+    int powerupThreshold = 10000;
     public int PowerupThreshold { get { return powerupThreshold; } } //score needed to use powerup
 
     void Start()
@@ -47,12 +55,15 @@ public class PlayerControl : MonoBehaviour
 		livesText.text = lives + "";
         //scoreText.text = score + "";
         alive = true;
-        speed = (1 / FollowCam.S.timeMag) *100; //mess with this!
+        speed = (1 / FollowCam.S.timeMag) * speedIncrease; //mess with this!
 
         previousAngle = angle = 90.0f;
         vibrationTimer = 0f;
+        timePowerTriggered = false;
         powerupGauge = 0;
         powerupReady = false;
+        
+        timeMax = 10000;
     }
 
     void ResetWeapon ()
@@ -105,9 +116,17 @@ public class PlayerControl : MonoBehaviour
 
 	void Update()
 	{
+        speed = (1 / FollowCam.S.timeMag) * speedIncrease; //keeps player moving at normal speed regardless of environment speed
+
         if (!powerupReady)
         {
+            IncreaseTimeGauge();
             powerupReady = IsPowerupReady();
+        }
+
+        if (timePowerTriggered)
+        {
+            DecreaseTimeGauge();
         }
 
         if (weaponCountdown >= 0)
@@ -159,9 +178,12 @@ public class PlayerControl : MonoBehaviour
                 PlayerMove();
                 PlayerRotate();
                 
-                if (state.Triggers.Right > 0.7)
+                if (state.Triggers.Right > 0.7 && powerupGauge == timeMax)
                 {
-                    UsePowerup();
+                    if (!timePowerTriggered)
+                        ActivateTimeSlowDown();
+
+                    timePowerTriggered = true;
                 }
             }
         }
@@ -314,9 +336,53 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void UsePowerup ()
+    void ResetTimePowerup ()
     {
+        timePowerTriggered = false;
+        DeactivateTimeSlowDown();
         powerupGauge = 0;
         powerupReady = false;
+    }
+
+    void IncreaseTimeGauge ()
+    {
+        Debug.Log("powerupgauge: " + powerupGauge + " maxTime: " + timeMax);
+        Debug.Log(1 * (powerupGauge / timeMax));
+        timeGauge.fillAmount = 1 * (powerupGauge / timeMax);
+    }
+
+    void DecreaseTimeGauge ()
+    {
+        if (powerupGauge >= 0)
+        {
+            powerupGauge -= Time.fixedDeltaTime * 3000;
+            timeGauge.fillAmount = 1 * (powerupGauge / timeMax);
+            if (powerupGauge <= 0)
+            {
+                //timeIcon.enabled = false;
+                //timeIcon = GameObject.Find("WeaponIcon").GetComponent<Image>();
+                ResetTimePowerup();
+                //timeIcon.enabled = true;
+                print("slow time off");
+            }
+        }
+    }
+
+    void ActivateTimeSlowDown ()
+    {
+        var mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        var cameraScript = mainCamera.GetComponent<FollowCam>();
+
+        //simulates time slow down for everyone except player
+        cameraScript.timeMag /= 2; //decrease environment speed
+    }
+
+    void DeactivateTimeSlowDown ()
+    {
+        var mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        var cameraScript = mainCamera.GetComponent<FollowCam>();
+
+        //simulates time slow down for everyone except player
+        cameraScript.timeMag *= 2; //return environment speed to normal
     }
 }
