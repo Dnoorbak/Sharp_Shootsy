@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -178.864166, y: -34.2531891, z: -1703.27905}
+  m_LocalPosition: {x: 29.6085701, y: -2.2246232, z: 7.21271133}
   m_LocalScale: {x: .300000012, y: .600000024, z: .300000012}
   m_Children: []
   m_Father: {fileID: 0}
@@ -181,19 +181,19 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4294962737
+      rgba: 4294954684
     m_Color[1]:
       serializedVersion: 2
-      rgba: 2883190597
+      rgba: 2885663606
     m_Color[2]:
       serializedVersion: 2
-      rgba: 1825636126
+      rgba: 1828701554
     m_Color[3]:
       serializedVersion: 2
-      rgba: 888536840
+      rgba: 889176328
     m_Color[4]:
       serializedVersion: 2
-      rgba: 14081792
+      rgba: 14643200
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
 --- !u!108 &10861604
@@ -266,6 +266,10 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: e003910502607974e9cbfae85ed5ac6a, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1fd19a46352b78a44959881ecb8448f3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119044}

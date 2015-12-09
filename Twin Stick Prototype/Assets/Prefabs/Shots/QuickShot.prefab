@@ -209,10 +209,10 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4293852977
+      rgba: 4286054193
     m_Color[1]:
       serializedVersion: 2
-      rgba: 2880175941
+      rgba: 2876112709
     m_Color[2]:
       serializedVersion: 2
       rgba: 1819541278
@@ -234,8 +234,8 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: .139705896, g: 1, b: .288032502, a: 1}
-  m_Intensity: 3
-  m_Range: 30
+  m_Intensity: 1
+  m_Range: 60
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -312,11 +312,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Colors.m_Color[0].rgba
-      value: 4293852977
+      value: 4286054193
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Colors.m_Color[1].rgba
-      value: 2880175941
+      value: 2876112709
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Colors.m_Color[2].rgba
@@ -344,12 +344,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Intensity
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 472f2d2f01a5bfc4795d9043b68c724b, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Range
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 193898}
