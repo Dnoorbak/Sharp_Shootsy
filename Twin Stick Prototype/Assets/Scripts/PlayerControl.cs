@@ -28,6 +28,7 @@ public class PlayerControl : MonoBehaviour
 	public int lives = 3;
     public int score = 0;
     public GameObject explosion;
+    public GameObject deathText;
     public GameObject damage;
     public GameObject shipGraphic;
     private bool alive;
@@ -219,6 +220,7 @@ public class PlayerControl : MonoBehaviour
         Instantiate(explosion, transform.position, transform.rotation);
         alive = false;
         HitVibration(false);
+        deathText.SetActive(true);
         //GetComponent<BoxCollider>().enabled = false;
         GameObject.DestroyObject(this.gameObject);
     }
