@@ -58,7 +58,7 @@ public abstract class BaseEnemy : MonoBehaviour {
             playerScript.powerupGauge += value;
     }
 
-    void Death()
+    public virtual void Death()
     {
         if (player != null)
         {

@@ -351,8 +351,8 @@ public class PlayerControl : MonoBehaviour
 
     void IncreaseTimeGauge ()
     {
-        Debug.Log("powerupgauge: " + powerupGauge + " maxTime: " + timeMax);
-        Debug.Log(1 * (powerupGauge / timeMax));
+        //Debug.Log("powerupgauge: " + powerupGauge + " maxTime: " + timeMax);
+        //Debug.Log(1 * (powerupGauge / timeMax));
         timeGauge.fillAmount = 1 * (powerupGauge / timeMax);
     }
 
