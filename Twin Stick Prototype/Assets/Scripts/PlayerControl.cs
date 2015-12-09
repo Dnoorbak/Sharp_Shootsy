@@ -31,6 +31,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject deathText;
     public GameObject damage;
     public GameObject shipGraphic;
+    public GameObject playAgain;
     private bool alive;
     bool powerupReady;
 
@@ -221,6 +222,7 @@ public class PlayerControl : MonoBehaviour
         alive = false;
         HitVibration(false);
         deathText.SetActive(true);
+        playAgain.SetActive(true);
         //GetComponent<BoxCollider>().enabled = false;
         GameObject.DestroyObject(this.gameObject);
     }
