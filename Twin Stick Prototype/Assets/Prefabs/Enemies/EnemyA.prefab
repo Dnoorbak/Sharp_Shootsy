@@ -592,7 +592,7 @@ MonoBehaviour:
   player: {fileID: 0}
   explosion: {fileID: 124612, guid: e5dd3a70c66f1e54f9ed7622fd77582a, type: 2}
   powerups:
-  - {fileID: 168932, guid: 098edfd9c1438cb45805b81c1ed60329, type: 2}
+  - {fileID: 138948, guid: 098edfd9c1438cb45805b81c1ed60329, type: 2}
   - {fileID: 189428, guid: 1372924dd70e97a43b647f1a2495b631, type: 2}
   dropChance: .0199999996
   value: 100
@@ -640,7 +640,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: powerups.Array.data[0]
       value: 
-      objectReference: {fileID: 168932, guid: 098edfd9c1438cb45805b81c1ed60329, type: 2}
+      objectReference: {fileID: 138948, guid: 098edfd9c1438cb45805b81c1ed60329, type: 2}
     - target: {fileID: 0}
       propertyPath: powerups.Array.data[1]
       value: 
