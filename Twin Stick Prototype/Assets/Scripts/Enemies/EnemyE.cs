@@ -14,7 +14,7 @@ public class EnemyE : BaseEnemy {
 		stateOffset2 = Random.Range (-100, 4);
 		sign = Random.Range (0, 2) * 2 - 1;
 		sign2 = Random.Range (0, 2) * 2 - 1;
-		print (sign +"  " + sign2);
+	//	print (sign +"  " + sign2);
 	}
 	
 	// Update is called once per frame

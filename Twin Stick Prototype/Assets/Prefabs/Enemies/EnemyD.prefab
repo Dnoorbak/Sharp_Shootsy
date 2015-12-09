@@ -1,8 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &114908
+--- !u!1 &107566
 GameObject:
   m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 460554}
+  - 95: {fileID: 9552022}
+  m_Layer: 0
+  m_Name: Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &114908
+GameObject:
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -37,7 +53,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &159058
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -56,7 +72,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &171138
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -81,9 +97,7 @@ Transform:
   m_LocalPosition: {x: 20.5599995, y: -27.8899994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 443564}
-  - {fileID: 453890}
-  - {fileID: 427820}
+  - {fileID: 460554}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &427820
@@ -94,9 +108,9 @@ Transform:
   m_GameObject: {fileID: 171138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
   m_Children: []
-  m_Father: {fileID: 404228}
+  m_Father: {fileID: 460554}
   m_RootOrder: 2
 --- !u!4 &443564
 Transform:
@@ -106,9 +120,9 @@ Transform:
   m_GameObject: {fileID: 114908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1.20000005}
   m_Children: []
-  m_Father: {fileID: 404228}
+  m_Father: {fileID: 460554}
   m_RootOrder: 0
 --- !u!4 &453890
 Transform:
@@ -118,10 +132,25 @@ Transform:
   m_GameObject: {fileID: 159058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 1.29999995}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
-  m_Father: {fileID: 404228}
+  m_Father: {fileID: 460554}
   m_RootOrder: 1
+--- !u!4 &460554
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 443564}
+  - {fileID: 453890}
+  - {fileID: 427820}
+  m_Father: {fileID: 404228}
+  m_RootOrder: 0
 --- !u!23 &2309614
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -156,7 +185,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: e8c2d79b1ffb617438777d54eea07607, type: 2}
+  - {fileID: 2100000, guid: 72151ba326bee194783bcbe1da49cfe4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -200,21 +229,21 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171138}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 478566fc1c584864f846ea5fd04efe38, type: 3}
 --- !u!33 &3321566
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159058}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 478566fc1c584864f846ea5fd04efe38, type: 3}
 --- !u!33 &3327674
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114908}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 478566fc1c584864f846ea5fd04efe38, type: 3}
 --- !u!65 &6539800
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -227,6 +256,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9552022
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd6a65c64b1403f43b5428e8f57d659d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!96 &9608472
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -257,19 +303,19 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 65437
+      rgba: 50175
     m_Color[1]:
       serializedVersion: 2
-      rgba: 167837597
+      rgba: 167825151
     m_Color[2]:
       serializedVersion: 2
-      rgba: 335609757
+      rgba: 335602687
     m_Color[3]:
       serializedVersion: 2
-      rgba: 335609757
+      rgba: 335602431
     m_Color[4]:
       serializedVersion: 2
-      rgba: 65437
+      rgba: 60927
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
 --- !u!96 &9623424
@@ -302,19 +348,19 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 2183266048
+      rgba: 2181077503
     m_Color[1]:
       serializedVersion: 2
-      rgba: 1260519168
+      rgba: 1258314495
     m_Color[2]:
       serializedVersion: 2
-      rgba: 337772288
+      rgba: 335567615
     m_Color[3]:
       serializedVersion: 2
-      rgba: 337772288
+      rgba: 335562239
     m_Color[4]:
       serializedVersion: 2
-      rgba: 2227968
+      rgba: 12287
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
 --- !u!108 &10820092
@@ -326,8 +372,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 2
-  m_Color: {r: .489655018, g: 1, b: 0, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: .641379297, b: 0, a: 1}
+  m_Intensity: 5
   m_Range: 20
   m_SpotAngle: 30
   m_CookieSize: 10

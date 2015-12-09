@@ -7,8 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Mat_SuperShiny
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _SUNDISK_HIGH_QUALITY
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _NORMALMAP _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -26,7 +26,7 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: c71e0dfeb001e6644ad53538179d7f43, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -61,7 +61,7 @@ Material:
         first:
           name: _DetailMask
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 529239097d02f9f42b0ddd436c6fcbb0, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -125,11 +125,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .388000011
+        second: .158000007
       data:
         first:
           name: _BumpScale
-        second: 1
+        second: 2
       data:
         first:
           name: _OcclusionStrength
@@ -149,20 +149,20 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 1
+        second: 0
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: .0206389371, b: .0808823705, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Color
-        second: {r: .0294117928, g: .0294117928, b: .0294117928, a: 1}
+        second: {r: .0120319789, g: .0110399816, b: .0159999728, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .117647052, g: .117647052, b: .117647052, a: 1}
+        second: {r: .352941155, g: 0, b: 0, a: 1}
       data:
         first:
           name: _SkyTint

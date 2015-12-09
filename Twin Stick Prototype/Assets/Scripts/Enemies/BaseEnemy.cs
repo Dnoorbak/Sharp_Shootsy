@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class BaseEnemy : MonoBehaviour {
 	public GameObject player;
     public GameObject explosion;
-    protected int value = 100;
+    public int value = 100;
 	public int level = 1;
     // Use this for initialization
     void Awake()

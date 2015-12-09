@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -24.75}
+  m_LocalPosition: {x: 13.6942577, y: -32.0934677, z: -2.6805582}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 447818}
@@ -171,13 +171,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 7
+  scale: 1
+  mag: 1
 --- !u!198 &19803864
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134776}
-  lengthInSec: .100000001
+  lengthInSec: .25
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -554,16 +556,16 @@ ParticleSystem:
           rgba: 4294967295
         key1:
           serializedVersion: 2
-          rgba: 255
+          rgba: 10354530
         key2:
           serializedVersion: 2
-          rgba: 16711868
+          rgba: 11927296
         key3:
           serializedVersion: 2
-          rgba: 2490490
+          rgba: 16774144
         key4:
           serializedVersion: 2
-          rgba: 2490490
+          rgba: 7999488
         key5:
           serializedVersion: 2
           rgba: 0
@@ -574,9 +576,9 @@ ParticleSystem:
           serializedVersion: 2
           rgba: 0
         ctime0: 0
-        ctime1: 7132
-        ctime2: 52814
-        ctime3: 65535
+        ctime1: 9638
+        ctime2: 29491
+        ctime3: 52814
         ctime4: 65535
         ctime5: 0
         ctime6: 0
@@ -589,7 +591,7 @@ ParticleSystem:
         atime5: 0
         atime6: 0
         atime7: 0
-        m_NumColorKeys: 4
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 2
       minGradient:
         key0:
@@ -1607,13 +1609,13 @@ ParticleSystem:
           rgba: 4294967295
         key1:
           serializedVersion: 2
-          rgba: 1974015
+          rgba: 7012126
         key2:
           serializedVersion: 2
-          rgba: 255
+          rgba: 8191832
         key3:
           serializedVersion: 2
-          rgba: 2490490
+          rgba: 8020224
         key4:
           serializedVersion: 2
           rgba: 2490490
