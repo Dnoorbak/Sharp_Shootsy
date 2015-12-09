@@ -77,7 +77,7 @@ public class PlayerControl : MonoBehaviour
         if (alive) {
             if (collision.gameObject.tag == "Powerup")
             {
-                if (collision.gameObject.name == "Powerup_SpreadShot")
+                if (collision.gameObject.GetComponent<WeaponPowerup>().type == "Powerup_SpreadShot")
                 {
                     shots = GameObject.Find("Player_SpreadGun").GetComponentsInChildren<Launcher>();
                     weaponMax = 30;
@@ -87,7 +87,7 @@ public class PlayerControl : MonoBehaviour
                     weaponIcon.enabled = true;
                 }
 
-                if (collision.gameObject.name == "Powerup_RapidShot")
+                if (collision.gameObject.GetComponent<WeaponPowerup>().type == "Powerup_RapidShot")
                 {
                     shots = GameObject.Find("Player_RapidGun").GetComponentsInChildren<Launcher>();
                     weaponMax = 30;
@@ -334,6 +334,7 @@ public class PlayerControl : MonoBehaviour
         }
         else
         {
+            this.GetComponent<AudioSource>().Play();
             return true;
         }
     }
@@ -357,7 +358,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (powerupGauge >= 0)
         {
-            powerupGauge -= Time.fixedDeltaTime * 3000;
+            powerupGauge -= Time.fixedDeltaTime * 1500;
             timeGauge.fillAmount = 1 * (powerupGauge / timeMax);
             if (powerupGauge <= 0)
             {
@@ -374,6 +375,7 @@ public class PlayerControl : MonoBehaviour
     {
         var mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         var cameraScript = mainCamera.GetComponent<FollowCam>();
+        FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>().enabled = true;
 
         //simulates time slow down for everyone except player
         cameraScript.timeMag /= 2; //decrease environment speed
@@ -383,6 +385,7 @@ public class PlayerControl : MonoBehaviour
     {
         var mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         var cameraScript = mainCamera.GetComponent<FollowCam>();
+        FollowCam.S.GetComponent<UnityStandardAssets.ImageEffects.MotionBlur>().enabled = false;
 
         //simulates time slow down for everyone except player
         cameraScript.timeMag *= 2; //return environment speed to normal

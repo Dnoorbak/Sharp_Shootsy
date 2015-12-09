@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class WeaponPowerup : MonoBehaviour {
+    public string type;
     public int lifetime;
     public GameObject effect;
     // Use this for initialization
@@ -13,9 +14,8 @@ public class WeaponPowerup : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameObject.DestroyObject(this.gameObject);
             Instantiate(effect, transform.position, transform.rotation);
-
+            GameObject.DestroyObject(this.gameObject);
         }
 
     }

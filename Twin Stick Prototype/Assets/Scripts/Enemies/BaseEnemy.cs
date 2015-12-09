@@ -4,6 +4,8 @@ using System.Collections;
 public abstract class BaseEnemy : MonoBehaviour {
 	public GameObject player;
     public GameObject explosion;
+    public GameObject[] powerups;
+    public float dropChance = 0.02f;
     public int value = 100;
 	public int level = 1;
     // Use this for initialization
@@ -63,6 +65,17 @@ public abstract class BaseEnemy : MonoBehaviour {
             UpdateScore();
             UpdateHighScore();
             UpdatePowerupGauge();            
+        }
+
+        if (powerups != null)
+        {
+            float roll = Random.Range(0f, 1f);
+            if (roll <= dropChance)
+            {
+                Instantiate(powerups[Random.Range(0, powerups.Length)], transform.position, transform.rotation);
+            }
+
+
         }
 
         Instantiate(explosion, transform.position, transform.rotation);
