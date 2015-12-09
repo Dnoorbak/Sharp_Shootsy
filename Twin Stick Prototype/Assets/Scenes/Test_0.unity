@@ -281,10 +281,8 @@ GameObject:
   - 114: {fileID: 128832033}
   - 114: {fileID: 128832034}
   - 114: {fileID: 128832036}
-<<<<<<< HEAD
-=======
   - 114: {fileID: 128832035}
->>>>>>> origin/master
+
   m_Layer: 0
   m_Name: _Main Camera
   m_TagString: MainCamera
@@ -490,7 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd999d1b2cf94a45a5b0a47ce074bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   shader: {fileID: 4800000, guid: e9ba2083ad114a07d000fbfb8d76c639, type: 3}
   blurAmount: 0
   extraBlur: 0
@@ -523,12 +520,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 404228, guid: 40e397614256d2f4587e89353f3d80ea, type: 2}
       propertyPath: m_LocalPosition.z
-=======
-  redChannel:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
->>>>>>> origin/master
       value: 0
       inSlope: 0
       outSlope: 0
@@ -2442,11 +2433,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-<<<<<<< HEAD
-  m_AnchoredPosition: {x: 96, y: -80}
-=======
   m_AnchoredPosition: {x: 150, y: -55}
->>>>>>> origin/master
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &949643643
@@ -4130,7 +4117,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1381946171}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
 --- !u!1001 &1395633852
 Prefab:
   m_ObjectHideFlags: 0
@@ -4213,8 +4199,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79ab047e87858d74a80695331555cdd2, type: 2}
   m_IsPrefabParent: 0
-=======
->>>>>>> origin/master
 --- !u!1 &1398956574
 GameObject:
   m_ObjectHideFlags: 0
@@ -5417,16 +5401,14 @@ RectTransform:
   - {fileID: 1327407959}
   - {fileID: 1333500443}
   - {fileID: 50584511}
-<<<<<<< HEAD
   - {fileID: 1036065990}
-=======
   - {fileID: 554493993}
   - {fileID: 1494726424}
   - {fileID: 1352158359}
   - {fileID: 1297882872}
   - {fileID: 1735497681}
   - {fileID: 1538437577}
->>>>>>> origin/master
+
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
